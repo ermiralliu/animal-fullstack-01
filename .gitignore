@@ -1,0 +1,11 @@
+# nodemodules
+node_modules
+
+# package-lock.json
+package-lock.json
+
+backend/backup
+backend/type
+backend/password.txt
+
+.vscode

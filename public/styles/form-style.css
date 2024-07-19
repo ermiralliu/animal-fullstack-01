@@ -1,0 +1,105 @@
+@media (min-width: 801px){
+    body{
+         width:50%;         /*using less of the screen width for desktop*/ 
+         height:100%;
+    }
+}
+
+td{
+    line-height:normal;
+    width:50%;
+    padding: 0px 8%;
+    border: 0px;
+    margin: 0;
+}
+
+tr:hover{
+    background-color: red;
+    box-shadow: 0px 0px 10px red;
+}
+
+input{
+    margin: 0 auto;
+    padding: 5px;
+    border: auto;
+}
+
+html{
+    background-image: radial-gradient(rgb(73, 12, 73), rgb(43, 37, 37))
+}
+
+#buttons{
+    display: flex;
+    justify-content: center;
+}
+
+#finish{
+    display: flex;
+    justify-content: center;
+}
+
+#animal{
+    background-color: rgb(102, 26, 51);
+    /* box-shadow: 0px 0px 30px rgb(90, 27, 27); */
+    border-radius: 8px;
+    padding: auto;
+    margin: auto;
+}
+
+#last{
+    width: 40%;
+}
+
+h1, h2{
+    text-align: center;
+    margin:auto;
+}
+
+.covered{
+    width:80%;
+    background-color: rgb(80, 22, 35);
+    margin: 0 auto;
+    padding: 1%;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 2px 2px 15px rgb(80, 19, 19);
+}
+
+body{
+    background-image: radial-gradient(rgb(27, 21, 44),rgb(56, 23, 56));
+    margin:0 auto;
+    background-color: rgb(27, 21, 44);
+    padding: 10px;
+    border: 3px solid purple;
+    border-radius: 8px;
+    color: white;
+    text-shadow: 1px 1px black;
+    line-height: 2;
+    font-size: 105%;
+}
+
+button:hover{
+    box-shadow: 0 0 20px blue;
+    background-color: lightblue;
+    color:black;
+}
+
+button{
+    font-size: large;
+    background-color: darkblue;
+    color:aliceblue;
+    width: 20%;
+    white-space: pre;
+    margin: 1% 0.5%;        /*first is vertical, second is horizontal */
+    padding:2%;
+    border: 0.5%;
+    border-color: rgb(34, 34, 141);
+    border-radius: 8px;
+}
+
+table{
+    border-spacing: 0 3px;
+    line-height: 0%;
+    margin:0 auto;
+    padding: 1% 1%;
+}

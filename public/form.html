@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width"/>
+        <link href="styles/form-style.css" rel="stylesheet" type="text/css"/>
+        <title> Fill the Form </title>
+        <!-- <script type="module" src="scripts/classes/Animals.js" defer></script>  -->
+        <script src="scripts/form.js" defer></script>
+    </head>
+    <body> <!--By default, input type is text  -->
+        <form id="the-form" action="../insert/Dogs" method="POST">
+            <h1>General Information</h1>
+            <table class="covered">
+                <tr> 
+                    <td>Name: </td>
+                    <td><input name="name"></td>
+                </tr>
+                <tr>
+                    <td>Description: </td>
+                    <td><input name="description"></td>
+                </tr>
+                <tr>
+                    <td>Image Link: </td>
+                    <td><input name="image"></td>
+                </tr>
+            </table>
+            <h2>Specific Information</h2>
+            <div id="buttons">
+                <button class="animal-button" id="Dogs" type="button"> Dog </button>
+                <button class="animal-button" id="Cats" type="button"> Cat </button>
+                <button class="animal-button" id="Birds" type="button"> Bird </button>
+            </div>
+            <div id="specific-div" class="covered">
+            <h2 id="animal">Dog</h2>
+            <table id="specific"> <!--is used in the script-->
+                <tr>
+                    <td> Breed Group: </td>
+                    <td><input name="breed"></td>
+                </tr>
+                <tr>
+                    <td> Size: </td>
+                    <td><input name="size"></td>
+                </tr>
+                <tr>
+                    <td> Life Span: </td>
+                    <td><input name="life"></td>
+                </tr>
+                <tr>
+                    <td > Origin: </td>
+                    <td><input name="origin"></td>
+                </tr>
+                <tr>
+                    <td > Temperament: </td>
+                    <td><input name="temperament"></td>
+                </tr>
+                <tr>
+                    <td > Colors: (separate different ones with commas)   </td>
+                    <td><input name="colors"></td>
+            </table>
+            </div>
+            <div id="finish">
+                <button id="last" type="submit" > Add to Database </button>
+            </div>
+        </form>
+    </body>
+</html>

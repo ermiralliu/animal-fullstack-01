@@ -1,0 +1,244 @@
+@import "shared.css";
+
+#adm{
+    position: absolute;
+    top:0vh;
+    right: 0vw;
+    background-color: red;
+    color: white;
+    padding: 1%;
+    border-bottom-left-radius: 12px;
+    text-decoration: none;
+    font-size: large;
+}
+
+#search > i{
+    background-color: white;
+    color: rgb(92, 92, 92);
+    vertical-align: middle;
+    margin-right: 0;
+    flex: 0.6;
+    padding: 1%;
+    padding-left: 1.5%;
+    padding-right: 0;
+    font-size: larger;
+}
+
+#search > *{
+    border:0;
+}
+#search{
+    min-height: 5vh;
+    justify-content: stretch;
+    display: flex;
+    margin: 1% auto;
+    width: 64vw;
+}
+#search > button{
+    border-left: 2px solid gray;
+    flex: 1 auto;
+}
+#search :first-child{
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+#search :last-child{
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+#search > input{
+    flex: 5 auto;
+    padding: 0 5px;
+    font-size: larger;
+}
+
+div#info{
+    background-color: darkblue;
+    padding: 0 1%;
+    border-top-right-radius: 12px;
+    display: flex;
+    column-gap: 1vw;
+    position:absolute;
+    bottom: 0;
+    left:0;
+}
+
+#info>h2{
+    margin: auto 1%;
+}
+
+#head-div{
+    padding-top: 0.1%;
+    margin: 0 auto;
+    display: flex;
+}
+
+h1{
+    height:0;                   /*to not reserve space for the header*/
+    position:relative;
+    top: 50%;
+    margin:0 auto;
+    color:white;
+}
+
+#sect{
+    display: flex;
+    padding-bottom: 1vh;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent; /* make scrollbar transparent */
+    }
+}
+
+#sect>figure{
+    margin: 0 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;            /*align items vs align content vs justify content*/
+    position: relative;
+}
+#sect>figure>*{
+    flex: 1 1 0;
+    justify-self: center;
+}
+
+img.body-img{
+    aspect-ratio: 1/1;
+    max-height: 56vh;
+}
+
+figcaption{
+    position: absolute;
+    bottom: 0px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    text-align: center;
+    font-size: larger;
+    width:100%;
+}
+
+@media only screen and (hover: none) {
+    figure.body-div:focus > figcaption{
+        opacity: 100%;
+        border-radius: 8px;
+        background-color: darkgray;
+    }
+}
+@media (max-width:700px){
+    #search{
+        width: auto;
+        margin: 1% 2%;
+    }
+    #sect{
+        align-self: center;            /* e vendos sect ne mesin vertikal te seksionit te faqes se mbetur*/
+        max-height: 64vh;
+    }
+    .body-div{
+        align-self: center;
+        position: relative;
+        max-width: 100vw;
+        padding: 0 2%;
+        margin-left: 0.5vw;
+        width: auto;
+    }
+    figcaption{
+        height: 0;
+        position: absolute;
+        top: 1%;
+        opacity: 100%;
+    }
+    img.body-img{
+        max-width: 97vw;
+        max-height: 97vw;
+    }
+    div.choice-div{             /*duhet qe per hover effect, te rritet vetem njeri imazh */
+        height: 33vh; 
+    }
+}
+@media (min-width:701px){     
+    div.choice-div:hover{
+        height: 40vh;                   /*duhej qe height fillestar te ishte edhe te div, dhe te imazhi per te qene konsistente*/
+        flex-grow: 1.5;
+    }
+    #s-bar{
+        width:40%;
+    }
+    figure.body-div:hover > figcaption{
+        opacity: 100%;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        background-color: rgb(117, 117, 117);
+    }
+    #head-div{
+        width:60%;
+    }
+    table{
+        font-size: 2.2cqw;
+    }
+    #sect{
+        padding: 0 35%;
+    }
+    div.choice-div{
+        height: 30vh;   
+    }
+    img.head-image{
+        height: 30vh;
+    }
+}
+
+img.head-image{
+    min-width: 105%;
+    max-width: 120%; /* nuk e kuptoj pse, por e rendesishme per mos tu bere teper e madhe*/
+    min-height: 105%;
+    object-fit: cover;
+}
+
+table{
+    border-spacing: 2%;
+    position:absolute;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    padding: 1%;
+    opacity: 0%;
+}
+td{
+    padding: 8px;
+}
+
+div.choice-div{
+    flex: 1 1 0;
+    transition-property: height, flex-grow ;
+    transition-duration: .6s;
+    transition-timing-function: ease;
+    text-align: center;
+    margin: 0 0.5%;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+/* The Modal (background) */
+#moTable, .modal>div{
+    background-color: red;
+    border-radius: 12px;
+    opacity: 100%;
+    padding: 4%;
+    font-size: larger;
+    width: 60%;
+    height: auto;
+    /*per ta qenderzuar*/
+    position: absolute;                 
+    top: 45%;                           
+    left: 50%;
+    transform: translate( -50%, -50%);
+}
+
+.modal>div{
+    padding-top: 2.5%;
+    max-height: 60%;
+    border-radius: 10px;
+}

@@ -1,0 +1,121 @@
+@import "shared.css";
+
+#insert{
+    position: absolute;
+    top:0vh;
+    right: 0vw;
+    background-color: red;
+    color: white;
+    padding: 1%;
+    border-bottom-left-radius: 12px;
+    text-decoration: none;
+    font-size: large;
+}
+
+#sth2{
+    background-color: red;
+    color:white;
+}
+html{
+    overflow: hidden;
+    max-width: 120vw;
+    width: 100vw;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    margin: 0.1%;
+    font-family: Cambria;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility !important;
+    background-color: black;
+    color:white;
+}
+
+div#buttonDiv{
+    position: relative;
+    left: 45vw;
+    transform: translate(0, -50%);
+    margin: 1vh auto;
+
+}
+button{
+    padding: 2vh;
+}
+
+#data{
+    margin:0 auto;
+    width: 80%;
+    font-size: large;
+    text-align: center;
+}
+td{
+    text-align: center;
+    margin-right: 5px;
+    padding: 2px 8px;
+}
+h1{
+    position: relative;
+    left:45%;
+}
+table,tr,td{
+    max-width: 100vh;
+    /* padding:auto 2%; */
+    border: 2px solid white;
+    border-collapse: collapse;
+}
+
+table{
+    
+    /* text-align: center; */
+    margin: 4% auto;
+}
+
+/* The Modal (background) */
+#mainform > table{
+    background-color: red;
+    border-radius: 12px;
+    opacity: 100%;
+    padding: 4%;
+    font-size: larger;
+    width: 60%;
+    height: 70%;
+    position: absolute;                 /*per ta qenderzuar*/
+    top: 45%;                           
+    left: 50%;
+    transform: translate( -50%, -50%);
+}
+
+.modal>form{
+    width: 60%;
+    padding: 3%;
+    padding-top: 2.5%;
+    max-height: 60vh;
+    border-radius: 8px;
+    background-color: red;
+    position: absolute;                 /*per ta qenderzuar*/
+    top: 45%;                           /*pak me lart se qendra*/                           
+    left: 50%;
+    transform: translate( -50%, -50%);
+}
+tr>input{
+    padding: 10px 6px;
+}
+td.inn{
+    margin: 0;
+    padding: 0;
+}
+td.inn>input{
+    padding: 4px 10px;
+    margin: 0;
+}
+
+.modal>form button{
+    position: relative;
+    left:42%;
+}
