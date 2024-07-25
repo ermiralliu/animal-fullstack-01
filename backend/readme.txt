@@ -1,3 +1,0 @@
-xView.js contains the router to the GET operations, to get the items from the database and make them available to be fetched to the user.
-xForm.js contains the router to the POST operation which takes information directly from the html form.
-xUpdate.js contains the router to the PUT and DELETE operations, which update or delete entries.

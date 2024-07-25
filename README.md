@@ -23,7 +23,7 @@ Here you can insert new animals into the database after choosing the collection 
 
 
 ## Commands
-First, you put the mongoDB uri in the configPublic.json file, then you rename it to `config.json`.
+First, you put the mongoDB uri in the `configPublic.json` file, then you rename it to `config.json`.
 
 You may run
 ```commandline
