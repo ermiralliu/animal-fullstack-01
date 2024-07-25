@@ -27,7 +27,7 @@ First, you put the mongoDB uri in the `configPublic.json` file, then you rename 
 
 You may run
 ```commandline
-npm start ${password}
+npm start
 ```
 in your command line, on the directory of this folder, to get the server running (and avoid problems with CORS). It will automatically open [localhost:8081](http://localhost:8081/) on your browser.
 
