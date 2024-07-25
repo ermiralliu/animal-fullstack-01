@@ -1,15 +1,11 @@
 import { MongoClient } from "mongodb";
+import config from "./config.json" with { type: "json" };
 
-console.log(process.argv[2]);
-
-if(process.argv[2] === null || process.argv[2] === undefined)
-    throw new Error("No password given");
-
-const password = process.argv[2];
-const uri = `mongodb+srv://some_other_user00:${password}@cluster0.irq1hdb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
-const client = new MongoClient(uri);
+const client = new MongoClient(config.mongoURI);
 
 await client.connect();
 const db = client.db("Animals");
+
+console.log('called once');
 
 export default db;

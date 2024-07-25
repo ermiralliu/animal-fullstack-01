@@ -1,43 +1,18 @@
-"use strict";
-import { Router } from "express";
-const RequestType = {
-    all: 0,
-    limit: 1,
-    search: 2,
-    sort: 3
-};
-Object.freeze(RequestType);
+import database from "../client.js";
+import { ObjectId } from "mongodb";
 
-export default function init(database) {
-    const router = Router();
-    router.get('/', async (req, res) => {
-        const coll = await getAllCollections(database);
-        if (coll === null)
-            return res.status(401).send("Couldn't GET collection");
-        return res.json(coll);
-    });
-    router.get(`/:type`, async (req, res) => {
-        console.log(req.url);
-        const url = req.url.substring(1);
-        const option = (() => {
-            const index = url.indexOf('?');
-            if (index === -1)
-                return { animalType: url, reqType: RequestType.all };
-            const middle = url.indexOf('=');
-            const reqType = RequestType[url.substring(index + 1, middle)];
-            let value = url.substring(middle + 1);
-            if (reqType === RequestType.limit)
-                value = parseInt(value);
-            return { animalType: url.substring(0, index), reqType: reqType, value: value }; //value can be a string or number
-        })();
-        const collect = await getOneCollection(database, option);
-        if (collect === null)
-            return res.status(401).send("Couldn't GET collection");
-        return res.json(collect);
-    });
-    return router;
-}
-async function getAllCollections(database) {
+export const RequestType = (()=>{
+    const rt = {
+        all: 0,
+        limit: 1,
+        search: 2,
+        sort: 3
+    };
+    Object.freeze(rt);
+    return rt;
+})();
+
+export async function getAllCollections() {
     try {               
         const collections = await database.collections();
         const documents = await Promise.all(collections.map(async (collection) => {
@@ -56,8 +31,8 @@ async function getAllCollections(database) {
         return null;
     }
 }
-;
-async function getOneCollection(database, option) {
+
+export async function getOneCollection(option) {
     try {
         const this_collection = database.collection(option.animalType);
         const document = await this_collection.find().toArray();
@@ -81,4 +56,41 @@ async function getOneCollection(database, option) {
         console.error(err);
         return null;
     }
+}
+
+export async function insert(COLLECTION, animal) {
+    try {
+        const coll = database.collection(COLLECTION);
+        await coll.insertOne(animal);
+        return true;
+    }
+    catch (err) {
+        console.error(err);
+        return false;
+    }
+}
+
+export async function update(id, type, animal){
+    try{
+        const coll = database.collection(type);
+        await coll.updateOne({ "_id": new ObjectId(id) }, { $set: animal });
+        return true;
+    }
+    catch (err){
+        console.error(err);
+        return false;
+    }
+}
+
+export async function deleteEntry(id, type){
+    try{
+        const coll = database.collection(type);
+        await coll.deleteOne({ "_id": new ObjectId(id) });
+        console.log("success");
+        return true;
+    }
+    catch(err){
+        console.error(err);
+        return false;
+    } 
 }

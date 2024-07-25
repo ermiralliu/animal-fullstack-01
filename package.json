@@ -2,16 +2,15 @@
   "name": "internship-fullstack",
   "version": "2.0.0",
   "description": "An application for an application",
-  "main": "backend/xMain.js",
-  "bin": "backend/xMain.js",
+  "main": "backend/main.js",
+  "bin": "backend/main.js",
   "devDependencies": {
     "@types/express": "4.17.21",
     "@types/mongodb": "4.0.7"
   },
   "type": "module",
   "scripts": {
-    "start": "start http://localhost:8081 & node backend/xMain.js",
-    "test": "start http://localhost:8081 & node backend/xMain.js %password%"
+    "start": "start http://localhost:8081 & node backend/main.js"
   },
 
   "repository": {

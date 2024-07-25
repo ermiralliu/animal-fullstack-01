@@ -7,5 +7,6 @@ package-lock.json
 backend/backup
 backend/type
 backend/password.txt
+backend/config.json
 
 .vscode
